@@ -62,3 +62,16 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+model Server {
+    id         String      @id @default(cuid())
+    name       String      @unique
+    characters Character[]
+}
+
+model Character {
+    id       String @id @default(cuid())
+    name     String @unique
+    serverId String
+    server   Server @relation(fields: [serverId], references: [id])
+}
