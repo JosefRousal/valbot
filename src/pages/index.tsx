@@ -36,7 +36,7 @@ const Home: NextPage = () => {
         <tbody>
           {!isFetching &&
             data?.map((item) => (
-              <tr>
+              <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.serverId!}</td>
