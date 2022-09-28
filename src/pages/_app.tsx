@@ -8,7 +8,6 @@ import type { AppType } from "next/app";
 import type { AppRouter } from "../server/router";
 import type { Session } from "next-auth";
 import "../styles/globals.css";
-import { Head } from "next/document";
 import {MantineProvider} from '@mantine/core'
 
 const MyApp: AppType<{ session: Session | null }> = ({
