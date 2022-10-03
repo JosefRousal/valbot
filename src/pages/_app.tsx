@@ -8,7 +8,8 @@ import type { AppType } from "next/app";
 import type { AppRouter } from "../server/router";
 import type { Session } from "next-auth";
 import "../styles/globals.css";
-import {MantineProvider} from '@mantine/core'
+import { MantineProvider } from "@mantine/core";
+import AppLayout from "../components/layout/AppLayout";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -31,7 +32,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
             colorScheme: "dark",
           }}
         >
-          <Component {...pageProps} />
+          <AppLayout>
+            <Component {...pageProps} />
+          </AppLayout>
         </MantineProvider>
       </SessionProvider>
     </>
